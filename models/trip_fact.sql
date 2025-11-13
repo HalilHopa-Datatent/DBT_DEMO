@@ -1,4 +1,3 @@
-
 WITH TRIPS as (
 
 select
@@ -12,7 +11,9 @@ TIMESTAMPDIFF(SECOND,TO_TIMESTAMP(STARTED_AT),TO_TIMESTAMP(ENDED_AT)) AS TRIP_DU
 
 from {{ ref('stg_bike') }}
 
-where RIDE_ID != 'ride_id'
+where RIDE_ID != '"bikeid"' and RIDE_ID != 'bikeid'
+
+
 
 )
 
