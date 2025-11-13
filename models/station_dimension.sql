@@ -8,7 +8,7 @@ DISTINCT
   START_LNG AS station_lng
 
 
-from {{ source('demo', 'bike') }}
+from {{ ref('stg_bike') }}
 
 where RIDE_ID != 'ride_id'
 
